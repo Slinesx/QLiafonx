@@ -1,0 +1,41 @@
+{
+    "id": "Douban+",
+    "name": "Liafonx",
+    "author": "@Liafonx",
+    "description": "Douban+AirTable",
+    "icon": "",
+    "repo": "https://github.com/XUYinong/QLiafonx",
+    "apps": [
+        {
+            "id": "@Liafonx.Douban",
+            "name": "豆瓣收藏",
+            "keys": [
+                "@Liafonx.Douban"
+            ],
+            "settings": [
+                {
+                    "id": "@Liafonx.Douban.tmdb_api_key",
+                    "name": "tmdb_api_key",
+                    "val": "",
+                    "type": "text",
+                    "placeholder": "1234567893feefc5f0q5000bfo0c38d90bbeb",
+                    "desc": "‘令牌’验证方式的值写一行"
+                },
+                {
+                    "id": "@Liafonx.Douban.airtable_api_key",
+                    "name": "测量标准代码",
+                    "val": "EPA_NowCast.2201",
+                    "type": "text",
+                    "placeholder": "EPA_NowCast.2201",
+                    "desc": "空气质量标准代码，会随系统更新而更新"
+                }
+            ],
+            "author": "@Liafonx",
+            "repo": "https://github.com/XUYinong/QLiafonx/blob/main/Douban.js",
+            "icons": [
+                "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png",
+                "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png"
+            ]
+        }
+    ]
+}
