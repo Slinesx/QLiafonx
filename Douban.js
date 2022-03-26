@@ -26,7 +26,7 @@
 */
 const $ = new Env('Douban')
 $.PROVIDERS_KEY = 'Neurogram_DouBan_provider'
-$.providers = JSON.prase($.getData($.PROVIDERS_KEY) || '[]')
+$.providers = JSON.prase($.getData($.PROVIDERS_KEY) || [])
 let url = $request.url
 let movieId = url.match(/subject\/(\d+)/)
 let seen = url.match(/\?seen=(\d)$/)
@@ -43,7 +43,7 @@ async function douban_addons() {
     if (!title) $done({})
     if (collect) body = body.replace(/<a.+pbtn.+wish.+>/, `<a href="${url}?seen=0">`)
     if (collect) body = body.replace(/<a.+pbtn.+collect.+>/, `<a href="${url}?seen=1">`)
-	$.setData(JSON.stringify('[]'), $.PROVIDERS_KEY)
+	$.setData(JSON.stringify([]), $.PROVIDERS_KEY)
 
     let mweb = [`<a href="https://www.cupfox.com/search?key=${title[1]}"><img src="https://files.catbox.moe/c8vszl.png" height="25" width="34.78" style="vertical-align: text-top;" /></a>`]
     let douban_options = {
@@ -76,7 +76,6 @@ async function douban_addons() {
 
             if (tmdb_providers.results[region]) {
                 if (tmdb_providers.results[region].flatrate) {
-					var providers = []
                     for (var i in tmdb_providers.results[region].flatrate) {
                         mweb.push(`<a href=""><img src="https://image.tmdb.org/t/p/original${tmdb_providers.results[region].flatrate[i].logo_path}" height="25" width="25" style="vertical-align: text-top;" /></a>`)
 						var provider = {
@@ -151,11 +150,11 @@ async function collect_movie() {
                             }
                         ],
                         "Seen": seen[1] == 1 ? true : false,
-						            "Provider": [
-							              {
-						                  	"url": "https://image.tmdb.org/t/p/original/t2yyOv40HZeVlLjYsCsPHnWLk4W.jpg",
-                            }
-                         ],
+						"Provider": [
+							{
+							"url": "https://image.tmdb.org/t/p/original/t2yyOv40HZeVlLjYsCsPHnWLk4W.jpg",
+							}
+						],
                         "Actors": casts.replace(/\s\/\s$/, ""),
                         "Director": directors.replace(/\s\/\s$/, ""),
                         "Genre": douban_result.genres.toString(),
