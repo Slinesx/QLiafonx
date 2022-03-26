@@ -26,7 +26,7 @@
 */
 const $ = new Env('Douban')
 $.PROVIDERS_KEY = 'Neurogram_DouBan_provider'
-$.providers = JSON.prase($.getData($.PROVIDERS_KEY) || [])
+$.providers = JSON.prase($.getData($.PROVIDERS_KEY) || '[]')
 let url = $request.url
 let movieId = url.match(/subject\/(\d+)/)
 let seen = url.match(/\?seen=(\d)$/)
