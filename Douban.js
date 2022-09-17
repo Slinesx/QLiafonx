@@ -29,7 +29,7 @@ $.PROVIDERS_KEY = 'Neurogram_DouBan_provider'
 $.providers = JSON.parse($.getdata($.PROVIDERS_KEY) || '[]')
 let url = $request.url
 let movieId = url.match(/subject\/(\d+)/)
-let seen = url.match(/\?seen=(\d)$/)
+let seen = url.match(/\mark$/)
 let collect = true  //收藏功能，默认关闭，需自行配置
 let region = "US" //流媒体区域
 let tmdb_api_key = "55dcc15aae83ec3b9e03b76ff5b03656" // TMDB API KEY
